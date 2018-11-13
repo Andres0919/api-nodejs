@@ -4,7 +4,9 @@ const {
     newUser,
     getUser,
     replaceUser,
-    deleteUser
+    deleteUser,
+    getUsersCars,
+    newUserCar
  } = require('../controllers/user');
 
 router.get('/', index);
@@ -15,5 +17,7 @@ router.put('/:userId', replaceUser);
 
 router.delete('/:userId', deleteUser);
 
+router.get('/:userId/cars', getUsersCars);
+router.post('/:userId/cars', newUserCar);
 
 module.exports = router;
