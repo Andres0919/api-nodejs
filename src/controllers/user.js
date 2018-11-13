@@ -26,5 +26,10 @@ module.exports = {
         const newUser = req.body;
         const oldUser = await User.findByIdAndUpdate(userId, newUser);
         res.status(200).json({success: true});
+    },
+    deleteUser: async (req, res, next) => {
+        const { userId } = req.params;
+        await User.findByIdAndRemove(userId);
+        res.status(200).json({success: true});
     }
 }
